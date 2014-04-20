@@ -26,7 +26,7 @@ pollutantmean("specdata", "sulfate", 1:10)
 ## [1] 4.064
 ```
 
-```r
+```coffeescript
 pollutantmean("specdata", "nitrate", 70:72)
 ```
 
@@ -34,7 +34,7 @@ pollutantmean("specdata", "nitrate", 70:72)
 ## [1] 1.706
 ```
 
-```r
+```coffeescript
 pollutantmean("specdata", "nitrate", 23)
 ```
 
@@ -45,7 +45,7 @@ pollutantmean("specdata", "nitrate", 23)
 This is a function that reads a directory full of files and reports the number of completely observed cases in each data file. The function should return a data frame where the first column is the name of the file and the second column is the number of complete cases.
 Here are some example outputs from this function.
 
-```r
+```coffeescript
 source("complete.r")
 complete("specdata", 1)
 ```
@@ -55,7 +55,7 @@ complete("specdata", 1)
 ## 1  1  117
 ```
 
-```r
+```coffeescript
 complete("specdata", c(2, 4, 8, 10, 12))
 ```
 
@@ -68,7 +68,7 @@ complete("specdata", c(2, 4, 8, 10, 12))
 ## 5 12   96
 ```
 
-```r
+```coffeescript
 complete("specdata", 30:25)
 ```
 
@@ -82,7 +82,7 @@ complete("specdata", 30:25)
 ## 6 25  463
 ```
 
-```r
+```coffeescript
 complete("specdata", 3)
 ```
 
@@ -95,7 +95,7 @@ complete("specdata", 3)
 This is a function that takes a directory of data files and a threshold for complete cases and calculates the correlation between sulfate and nitrate for monitor locations where the number of completely observed cases (on all variables) is greater than the threshold. The function should return a vector of correlations for the monitors that meet the threshold requirement. If no monitors meet the threshold requirement, then the function should return a numeric vector of length 0. A prototype of this function follows
 Here are some example outputs from this function.
 
-```r
+```coffeescript
 source("corr.r")
 source("complete.r")
 cr <- corr("specdata", 150)
@@ -106,7 +106,7 @@ head(cr)
 ## [1] -0.01896 -0.14051 -0.04390 -0.06816 -0.12351 -0.07589
 ```
 
-```r
+```coffeescript
 summary(cr)
 ```
 
@@ -115,7 +115,7 @@ summary(cr)
 ## -0.2110 -0.0500  0.0946  0.1250  0.2680  0.7630
 ```
 
-```r
+```coffeescript
 cr <- corr("specdata", 400)
 head(cr)
 ```
@@ -124,7 +124,7 @@ head(cr)
 ## [1] -0.01896 -0.04390 -0.06816 -0.07589  0.76313 -0.15783
 ```
 
-```r
+```coffeescript
 summary(cr)
 ```
 
@@ -133,7 +133,7 @@ summary(cr)
 ## -0.1760 -0.0311  0.1000  0.1400  0.2680  0.7630
 ```
 
-```r
+```coffeescript
 cr <- corr("specdata", 5000)
 summary(cr)
 ```
@@ -143,7 +143,7 @@ summary(cr)
 ## 
 ```
 
-```r
+```coffeescript
 length(cr)
 ```
 
@@ -151,7 +151,7 @@ length(cr)
 ## [1] 0
 ```
 
-```r
+```coffeescript
 cr <- corr("specdata")
 summary(cr)
 ```
@@ -161,7 +161,7 @@ summary(cr)
 ## -1.0000 -0.0528  0.1070  0.1370  0.2780  1.0000
 ```
 
-```r
+```coffeescript
 length(cr)
 ```
 
