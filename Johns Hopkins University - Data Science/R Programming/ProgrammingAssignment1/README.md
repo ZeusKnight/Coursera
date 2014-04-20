@@ -6,7 +6,7 @@ For this first programming assignment I wrote three functions that are meant to 
 
 ##Data
 
-The data can be found at the subdirectory /specdata. Alternatively, download the zip file rprog-data-specdata.zip and unzip the /specdata folder into your workspace.
+Download the zip file rprog-data-specdata.zip and unzip the /specdata folder into your workspace.
 
 The zip file contains 332 comma-separated-value (CSV) files containing pollution monitoring data for fine particulate matter (PM) air pollution at 332 locations in the United States. Each file contains data from a single monitor and the ID number for each monitor is contained in the file name. For example, data for monitor 200 is contained in the file "200.csv". Each file contains three variables:
 Date: the date of the observation in YYYY-MM-DD format (year-month-day)
@@ -17,8 +17,8 @@ nitrate: the level of nitrate PM in the air on that date (measured in micrograms
 This is a function named 'pollutantmean' that calculates the mean of a pollutant (sulfate or nitrate) across a specified list of monitors. The function 'pollutantmean' takes three arguments: 'directory', 'pollutant', and 'id'. Given a vector monitor ID numbers, 'pollutantmean' reads that monitors' particulate matter data from the directory specified in the 'directory' argument and returns the mean of the pollutant across all of the monitors, ignoring any missing values coded as NA.
 Here are some example outputs from this function.
 
-```R
-source("pollutantmean.R")
+```r
+source("pollutantmean.r")
 pollutantmean("specdata", "sulfate", 1:10)
 ```
 
@@ -26,7 +26,7 @@ pollutantmean("specdata", "sulfate", 1:10)
 ## [1] 4.064
 ```
 
-```R
+```r
 pollutantmean("specdata", "nitrate", 70:72)
 ```
 
@@ -34,7 +34,7 @@ pollutantmean("specdata", "nitrate", 70:72)
 ## [1] 1.706
 ```
 
-```R
+```r
 pollutantmean("specdata", "nitrate", 23)
 ```
 
@@ -45,8 +45,8 @@ pollutantmean("specdata", "nitrate", 23)
 This is a function that reads a directory full of files and reports the number of completely observed cases in each data file. The function should return a data frame where the first column is the name of the file and the second column is the number of complete cases.
 Here are some example outputs from this function.
 
-```R
-source("complete.R")
+```r
+source("complete.r")
 complete("specdata", 1)
 ```
 
@@ -55,7 +55,7 @@ complete("specdata", 1)
 ## 1  1  117
 ```
 
-```R
+```r
 complete("specdata", c(2, 4, 8, 10, 12))
 ```
 
@@ -68,7 +68,7 @@ complete("specdata", c(2, 4, 8, 10, 12))
 ## 5 12   96
 ```
 
-```R
+```r
 complete("specdata", 30:25)
 ```
 
@@ -82,7 +82,7 @@ complete("specdata", 30:25)
 ## 6 25  463
 ```
 
-```R
+```r
 complete("specdata", 3)
 ```
 
@@ -95,9 +95,9 @@ complete("specdata", 3)
 This is a function that takes a directory of data files and a threshold for complete cases and calculates the correlation between sulfate and nitrate for monitor locations where the number of completely observed cases (on all variables) is greater than the threshold. The function should return a vector of correlations for the monitors that meet the threshold requirement. If no monitors meet the threshold requirement, then the function should return a numeric vector of length 0. A prototype of this function follows
 Here are some example outputs from this function.
 
-```R
-source("corr.R")
-source("complete.R")
+```r
+source("corr.r")
+source("complete.r")
 cr <- corr("specdata", 150)
 head(cr)
 ```
@@ -106,7 +106,7 @@ head(cr)
 ## [1] -0.01896 -0.14051 -0.04390 -0.06816 -0.12351 -0.07589
 ```
 
-```R
+```r
 summary(cr)
 ```
 
@@ -115,7 +115,7 @@ summary(cr)
 ## -0.2110 -0.0500  0.0946  0.1250  0.2680  0.7630
 ```
 
-```R
+```r
 cr <- corr("specdata", 400)
 head(cr)
 ```
@@ -124,7 +124,7 @@ head(cr)
 ## [1] -0.01896 -0.04390 -0.06816 -0.07589  0.76313 -0.15783
 ```
 
-```R
+```r
 summary(cr)
 ```
 
@@ -133,7 +133,7 @@ summary(cr)
 ## -0.1760 -0.0311  0.1000  0.1400  0.2680  0.7630
 ```
 
-```R
+```r
 cr <- corr("specdata", 5000)
 summary(cr)
 ```
@@ -143,7 +143,7 @@ summary(cr)
 ## 
 ```
 
-```R
+```r
 length(cr)
 ```
 
@@ -151,7 +151,7 @@ length(cr)
 ## [1] 0
 ```
 
-```R
+```r
 cr <- corr("specdata")
 summary(cr)
 ```
@@ -161,7 +161,7 @@ summary(cr)
 ## -1.0000 -0.0528  0.1070  0.1370  0.2780  1.0000
 ```
 
-```R
+```r
 length(cr)
 ```
 
