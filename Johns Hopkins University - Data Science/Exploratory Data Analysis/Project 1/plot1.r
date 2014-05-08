@@ -1,0 +1,5 @@
+data = read.csv2("exdata-data-household_power_consumption/household_power_consumption.txt", skip = 66637, nrows = 2879, dec = ".", header = FALSE)
+colnames(data) <- c("Date", "Time", "Global_active_power", "Global_reactive_power", "Voltage", "Global_intensity", "Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
+png("plot1.png")
+plot(hist(sapply(data["Global_active_power"], as.double)), main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red")
+dev.off()

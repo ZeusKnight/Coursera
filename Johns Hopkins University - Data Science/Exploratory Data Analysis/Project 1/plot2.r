@@ -1,0 +1,6 @@
+data = read.csv2("exdata-data-household_power_consumption/household_power_consumption.txt", skip = 66637, nrows = 2879, dec = ".", header = FALSE)
+colnames(data) <- c("Date", "Time", "Global_active_power", "Global_reactive_power", "Voltage", "Global_intensity", "Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
+png("plot2.png")
+plot(y = sapply(data["Global_active_power"], as.double), x = as.numeric(strptime(paste(as.character(data[["Date"]]), as.character(data[["Time"]])), format = "%d/%m/%Y %H:%M:%S")), main = "", xlab = "", ylab = "Global Active Power (kilowatts)", type = "l", xaxt = "n")
+axis.POSIXct(1, at = c(as.POSIXct("2007-02-01 00:00:00"), as.POSIXct("2007-02-02 00:00:00"), as.POSIXct("2007-02-03 00:00:00")), format = "%a")
+dev.off()
