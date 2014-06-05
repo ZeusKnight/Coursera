@@ -1,0 +1,30 @@
+Data Dictionary - Tidy Data - mean_table
+
+walking    
+    Mean of the data collected while walking on each subject
+walking_upstairs
+    Mean of the data collected while walking upstairs on each subject
+walking_downstairs
+	Mean of the data collected while walking downstairs on each subject
+sitting
+	Mean of the data collected while sitting on each subject
+standing
+	Mean of the data collected while standing on each subject
+laying
+	Mean of the data collected while laying on each subject
+	
+	
+Data Dictionary - Tidy Data - sd_table
+
+walking    
+    Standard deviation of the data collected while walking on each subject
+walking_upstairs
+    Standard deviation of the data collected while walking upstairs on each subject
+walking_downstairs
+	Standard deviation of the data collected while walking downstairs on each subject
+sitting
+	Standard deviation of the data collected while sitting on each subject
+standing
+	Standard deviation of the data collected while standing on each subject
+laying
+	Standard deviation of the data collected while laying on each subject
