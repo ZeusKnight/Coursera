@@ -39,3 +39,5 @@ complete_data = cbind(subject_data, activity_data, X_data)
 for(i in 1 : nrow(activity_list)){
     complete_data$activity[complete_data$activity == i] = tolower(as.character(activity_list[i, 2]))
 }
+
+write.table(mean_table, "tidydata.txt", sep="\t")
